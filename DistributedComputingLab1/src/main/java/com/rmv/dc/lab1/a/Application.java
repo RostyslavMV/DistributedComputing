@@ -8,8 +8,8 @@ public class Application {
 
     private static final JSlider slider = new JSlider();
 
-    private static final Thread thread10 = new Thread(new MyRunnable(10, slider));
-    private static final Thread thread90 = new Thread(new MyRunnable(90, slider));
+    private static final Thread thread10 = new Thread(new MyRunnable(-1, slider));
+    private static final Thread thread90 = new Thread(new MyRunnable(1, slider));
 
     public static void main(String[] args) {
 
@@ -71,14 +71,16 @@ public class Application {
     }
 
     private static void startThreads() {
+        thread10.setDaemon(true);
+        thread90.setDaemon(true);
         thread10.start();
         thread90.start();
     }
 
-    private static void increaseThreadPriority(Thread thread) {
-        if (thread.getPriority() < Thread.MAX_PRIORITY)
-            thread.setPriority(thread.getPriority() + 1);
-    }
+        private static void increaseThreadPriority(Thread thread) {
+            if (thread.getPriority() < Thread.MAX_PRIORITY)
+                thread.setPriority(thread.getPriority() + 1);
+        }
 
     private static void decreaseThreadPriority(Thread thread) {
         if (thread.getPriority() > Thread.MIN_PRIORITY)

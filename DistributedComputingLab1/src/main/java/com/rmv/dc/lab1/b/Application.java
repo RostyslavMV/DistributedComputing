@@ -37,35 +37,31 @@ public class Application {
 
 
         startThread10Button.addActionListener(e -> {
-            if (semaphore.get() == 0) {
+            if (semaphore.compareAndSet(0,1)) {
                 label.setText("Slider is being used by a thread");
-                semaphore.incrementAndGet();
                 thread10.setPriority(Thread.MIN_PRIORITY);
                 thread10.start();
                 stopThread90Button.setEnabled(false);
             }
         });
         stopThread10Button.addActionListener(e -> {
-            if (semaphore.get() > 0) {
+            if (semaphore.compareAndSet(1,0)) {
                 label.setText("");
-                semaphore.decrementAndGet();
                 thread10.interrupt();
                 stopThread90Button.setEnabled(true);
             }
         });
         startThread90Button.addActionListener(e -> {
-            if (semaphore.get() == 0) {
+            if (semaphore.compareAndSet(0,1)) {
                 label.setText("Slider is being used by a thread");
-                semaphore.incrementAndGet();
                 thread90.setPriority(Thread.MAX_PRIORITY);
                 thread90.start();
                 stopThread10Button.setEnabled(false);
             }
         });
         stopThread90Button.addActionListener(e -> {
-            if (semaphore.get() > 0) {
+            if (semaphore.compareAndSet(1,0)) {
                 label.setText("");
-                semaphore.decrementAndGet();
                 thread90.interrupt();
                 stopThread10Button.setEnabled(true);
             }

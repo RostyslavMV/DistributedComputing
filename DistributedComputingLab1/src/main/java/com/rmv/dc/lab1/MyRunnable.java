@@ -12,7 +12,7 @@ public class MyRunnable implements Runnable {
     private int targetNumber;
     private boolean running;
 
-    private JSlider slider;
+    private final JSlider slider;
 
     public MyRunnable(int targetNumber, JSlider slider) {
         this.targetNumber = targetNumber;
@@ -24,17 +24,17 @@ public class MyRunnable implements Runnable {
     public void run() {
         while (!Thread.currentThread().isInterrupted()) {
             moveSlider();
-//            try {
-//                Thread.sleep(10);
-//            } catch (InterruptedException e) {
-//                Thread.currentThread().interrupt();
-//            }
+            try {
+                Thread.sleep(20);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
         }
     }
 
     private void moveSlider() {
         synchronized (slider) {
-            slider.setValue(targetNumber);
+                slider.setValue(targetNumber);
         }
     }
 }
