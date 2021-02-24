@@ -5,7 +5,7 @@ public class Application {
     public static void main(String[] args) {
         BeeRunnable.setForestTasksManager(new ForestTasksManager(100,100));
         int threadsNumber = 4;
-        Thread[] threads = new Thread[4];
+        Thread[] threads = new Thread[threadsNumber];
         for (int i = 0; i < threadsNumber; i++) {
            threads[i] = new Thread(new BeeRunnable());
            threads[i].start();

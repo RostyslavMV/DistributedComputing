@@ -28,7 +28,9 @@ public class Competition extends RecursiveTask<Integer> {
         rightPartCompetition.fork();
         int leftCompetitionWinnerIndex = leftPartCompetition.join();
         int rightCompetitionWinnerIndex = rightPartCompetition.join();
-        return getWinnerFromDuel(leftCompetitionWinnerIndex, rightCompetitionWinnerIndex);
+        int winner = getWinnerFromDuel(leftCompetitionWinnerIndex, rightCompetitionWinnerIndex);
+        System.out.println(monksQiPower[winner]);
+        return winner;
     }
 
     private int getWinnerFromDuel(int index1, int index2){

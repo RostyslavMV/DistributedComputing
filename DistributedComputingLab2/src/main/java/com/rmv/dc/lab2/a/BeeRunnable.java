@@ -15,6 +15,7 @@ public class BeeRunnable implements Runnable {
     public void run() {
         while (!forestTasksManager.isDone()) {
             Task currentTask = forestTasksManager.getTask();
+            System.out.println("Now searching in row number: " + currentTask.getY());
             boolean[] field = currentTask.getField();
             if (field == null)
                 return;
