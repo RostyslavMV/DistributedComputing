@@ -1,0 +1,10 @@
+
+h
+java:S1128
+"FRemove this unused import 'java.util.concurrent.atomic.AtomicInteger'.(¿êäœøÿÿÿÿ8ÂÂœë€/
+Z	java:S1064"9Replace this use of System.out or System.err by a logger.(€¦ŒÕþÿÿÿÿ8ÖÿÁë€/
+a
+java:S1128"?Remove this unused import 'java.util.concurrent.CyclicBarrier'.(œèž—ùÿÿÿÿ8³¶Þë€/
+U	java:S106"9Replace this use of System.out or System.err by a logger.(ºŸõ·8à…Óë€/
+e
+java:S1128"HRemove this unused import 'java.util.concurrent.BrokenBarrierException'.(§ø€ÿ8÷¨ßë€/
