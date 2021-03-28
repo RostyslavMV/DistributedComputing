@@ -1,0 +1,7 @@
+components/DuckAnimation.java
+ components.DuckAnimation
+ components.DuckAnimation$1
+components/JPanelWithBackground.java
+ components.JPanelWithBackground
+Application.java
+ Application
